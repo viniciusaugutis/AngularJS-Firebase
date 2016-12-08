@@ -1,0 +1,3 @@
+Formas de encapsular valores e atributos, importante para a linguagem javascript.
+
+Se preciso aprofundar no tema.

@@ -1,0 +1,101 @@
+Primeira forma: No escopo global
+
+Chamar ela diretamente
+
+soma(2,4);
+
+______________________________________________
+
+Chamando funcao interna 
+
+var helloWorld = function(){
+	return function (oi){
+		return "Hello World!";
+	};
+};
+
+console.log(helloWorld()); //retorna nada so uma function
+console.log(helloWorld()("haha"); // retorna o hello world
+
+Muito comum que usa uma função dentro de uma outra e passagem de parametro de uma função.
+
+_________________________________________________
+
+Chamando função por meio de um objeto
+
+-Não existem metodos em javascript mas posso simulá-los.
+
+var pessoa = {
+
+	nome: "Joao",
+	getNome: function(){
+		return this.nome;
+	};
+};
+
+pessoa.getNome(); //retorna o nome de joão
+
+__________________________________________________
+
+Chamando por call e apply
+
+Call chama a função e posso passar o escopo para essa chamada
+Apply faz a mesma coisa mas muda na forma de passar parametros
+
+getIdade.call(pessoa); //passa o escopo pessoa para a function getIdade e ela
+consegue utilizá-la (no caso pessoa é um objeto)
+
+getIdade.call(pessoa, 2);
+getIdade.apply(pessoa,[2]); // para passar parametro eu preciso passar ele como um 
+array em apply.
+
+Toda função tem "escondido" seus arguments, que contem todos os parametros que foram passados
+assim mesmo que nao os defino na function eu consigo acessalos pela variavel
+implicita que é o console.log(arguments).
+
+___________________________________________________________
+Chamando a função por meio do operador new
+
+//Utilização de Funções construtores vs Funções Fábricas
+
+var pessoa = {
+	nome: "Pedro",
+	idade: 22
+};
+_________________________________________
+Funções fábricas
+
+var criarPessoa = function(nome, idade) {
+	return {
+		nome: nome,
+		idade: idade
+	};
+};
+
+criarPessoa("Pedro", 20);
+_________________________________________
+Função Construtora
+//por convenção ela deve começar por maisculo, para lembrar do operador new
+
+var Pessoa = function(nome,idade){
+	this.nome = nome;
+	this.idade = idade;
+};
+
+var pessoa1 = new Pessoa("vinicius", 15);
+var pessoa2 = new Pessoa("Pedro", 20);
+
+____________________________________________
+
+var pedro = {};
+
+Pessoa.call(pedro, "Pedro", 20); // resultado vai ser a instanciação de pedro
+
+_________________________________________
+
+Qual é melhor???
+
+Isso é por questão de escolhas e designer.
+Fábrica ela é mais verbosa enquanto a construtora ela é mais enxuta.
+
+_________________________________________

@@ -1,0 +1,97 @@
+Cuidado com o escopo global!!!
+
+Com nomes de functions iguais, mas em elementos diferentes e isso pode se tornar poluido e trazer transtornos.
+
+Javascript não tem um linker que faz os vinculos de functions, atributos.
+
+Assim uma das formas de melhorar isso é por meio do encapsulamento.
+
+
+Objeto: é um conjunto mapa de chaves e valores.
+
+
+Exemplo ótimo e muito bom;
+____________________________________________________________________________________
+
+var counter = {
+	value: 0,
+	add: function(){
+		return ++this.value;
+	}
+};
+
+console.log(counter.add());
+
+var itens = {
+
+	value: [],
+	add: function(item){
+		this.value.push(item);
+		return this.value;
+		
+	};
+
+};
+
+console.log(itens.add('A'));
+console.log(counter.add());
+
+Assim o add não fica com escopo global e não prejudica o seu codigo.
+
+__________________________________________________________________________________
+Problema: Javascript não tem propriedade public e private e precisamos corrigir de alguma
+forma isso. Isso é um problema por acessar o objeto diretamente.
+
+PARA FAZER ENCAPSULAMENTO
+
+Por meio de functions, e fica um bloco isolado.
+
+Reescrevendo o codigo acima por Factory Function
+
+var createCounter = function(){
+	var value = 0;
+	return {
+		add:  function(){
+		return ++value;
+		}
+	};
+};
+
+var counter = createCounter();
+
+Gerei um encapsulamento por meio da Factory Function
+
+_______________________________________________________________________
+
+Reescrevendo o codigo acima por Funcao Contrutora
+
+var Counter = function(){
+	var value = 0;
+	this.add = function(){
+		return ++value;
+	};
+};
+
+var counter = new Counter();
+
+Gerei um encapsulamento por meio da Contructor Function (new)
+
+_______________________________________________________________________
+
+IIFE - Funcao Invocada diretamente, através do module pattern.
+
+var Counter = (function(){
+	var value = 0;
+	this.add = function(){
+		return ++value;
+	};
+})(); //JA FACO E INVOCO A FUNCAO
+
+assim posso chamar ela diretamente, sem necessidade de dar um new ou criar um outro.
+
+console.log(counter.add()); 
+
+Tudo que for privado na function posso usar o _
+
+var _value = 0; //indica que é privado (em forma de codigo apenas)
+

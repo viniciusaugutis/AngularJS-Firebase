@@ -1,0 +1,29 @@
+Function é um objeto que contém um bloco de código executável.
+
+Esse bloco é isolado, não pode ser acessado externamente.
+
+As funções são de primeira classe, ou seja, função que pode ser atribuida a uma variavel, passada como parametro ou
+retornada de uma outra função.
+
+____________________________________________________________________________________________________________________
+Criação de uma função
+
+Forma 1:
+function soma(a,b){
+	return a + b;
+
+}
+
+Forma 2:
+
+var soma = function(a,b){
+	return a + b;
+}
+
+Qual a diferença entre as duas? Uma é function declaration e outra é function expression
+
+A function expression (do jeito comum) é carregada antes de executar. Então posso declarar ela em qualquer lugar e chamala
+em qualquer lugar que vai funcionar.
+
+Já a function declaration(forma 2) ela deve ser criada antes de usá-la.
+_____________________________________________________________________________________________________________________
