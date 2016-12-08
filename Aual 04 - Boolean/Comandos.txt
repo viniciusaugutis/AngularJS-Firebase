@@ -1,0 +1,25 @@
+var isento = true;
+var estudante = false;
+
+isento.toString; //"true"
+estudante.valueOf(); //false que retorna o valor dela.
+________________________________________________________
+Cuidados com boolean
+
+!!0 : estou negando duas vezes. Assim ele é falso
+
+!!NaN: falso
+
+!!"": falso
+
+!!false: falso
+
+!!null: falso
+
+!!undefined: falso
+
+Esses 6 são falso por padrão e todo o restante é true por padrão.
+FICAR ESPERTO COM ISSO.
+
+UM objeto vazio e um array vazio é verdadeiro.
+

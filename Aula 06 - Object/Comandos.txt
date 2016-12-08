@@ -1,0 +1,26 @@
+- Coleção dinâmica de chaves e valores
+- É possível adicionar ou remover propriedades a qualquer momento.
+
+var pessoa = {} : criação de um novo objeto pessoa (no caso um vazio)
+
+typeof (pessoa): ve o tipo de dado do atributo pessoa
+
+Isso não é um JSON e sim um objeto literal. Json é diferente.
+
+__________________________________________________________________________
+Tambem pode fazer de outro jeito a adicionar dados
+
+var pessoa = {nome: "vinicius", idade: 15};
+
+OU
+
+pessoa.nome = "João";
+
+OU
+
+pessoa["nome"] = "João;
+_________________________________________________________________________________
+
+Apagar uma propriedade:
+
+delete pessoa.idade
