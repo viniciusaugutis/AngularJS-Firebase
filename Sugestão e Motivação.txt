@@ -1,0 +1,3 @@
+Quando criar apps com Angular Fire não insista em fluxo de dados assincronos, conte com o digest
+loop para manter os dados sincronizados com seu modelo e deixe o Angular abrir suas promises usando
+o objeto resolve.

@@ -1,0 +1,22 @@
+{
+  "name": "projeto angular e firebase",
+  "authors": [
+    "Vinicius Augutis <vinicius_augutis@hotmail.com>"
+  ],
+  "description": "iniciando com firebase e angular",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.0",
+    "angularfire": "2.0.0",
+    "firebase": "3.6.0"
+  }
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Firebase e Angular JS</title>
+
+    <script src = "lib/angular/angular.min.js"></script>
+    <script src = "lib/angular/angular.js"></script>
+    <script src = "lib/angularfire/dist/angularfire.js"></script>
+    <script src = "lib/firebase/firebase.js"></script>
+    <script src = "js/app.js"></script>
+
+</head>
+
+<body ng-app = "app">
+    <div id = "mensagem" ng-controller="MyCtr as crtl">
+
+        {{crtl.object | json}}
+    </div>
+</body>
+
+</html>

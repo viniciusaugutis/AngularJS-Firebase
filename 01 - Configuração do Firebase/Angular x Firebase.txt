@@ -1,0 +1,39 @@
+Através do uso da biblioteca AngularFire Library, que é a biblioteca oficial para utilizá-los.
+Facil de usar
+_____________________________________________________________________________________________________
+Criação
+
+angular.module('app', ['firebase']); //injeta o módulo do angularFire  como dependencia
+
+_____________________________________________________________________________________________________
+Devo colocar no meu .html as dependencias do angular.js , firebase.js e do angularFire.js
+
+_____________________________________________________________________________________________________
+Existem muitos serviços para usar no seu modulo app
+
+$firebaseRef
+
+$firebaseRefProvider
+
+$firebaseObject(ref)
+
+$firebaseArray(ref)
+
+$firebaseAuth(ref)
+
+$firebaseAuthService
+
+firebase init - inicializa o firebase
+
+firebase serve - inicializa o server
+
+$FirebaseObject(ref) permite pegar dados de um objeto no Firebase Database
+
+$FirebaseRefProvider nos permite configurar as referencias do FirebaseDatabase para injeção
+de dependencia.
+
+Diferenca do FirebaseRefProvider e FirebaseRef
+
+O provider permite configurar algo na fase de configuração, como por exemplo configurar
+o firebase reference. Já em um controller por exemplo usamos o firebaseRef que estamos so
+injetando a referencia, onde ta criando um servico

@@ -1,5 +1,0 @@
-Diferença de undefined e null
-
-undefined: retornado quando o valor de uma variavel nao existe, ou uma propriedade que não existe.
-
-null: retorna quando há ausencia de um valor para um atributo ou propriedade. 

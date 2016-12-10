@@ -1,0 +1,41 @@
+O Angular JS conta com uma biblioteca fantástica que é o Angular Fire, que faz a sincronização dos dados da aplicação
+local com o firebase database.
+
+Através do $digetst loop angular, que remove código padrão e descomplica tudo e simplifica o ciclo de fluxos
+assincronos.
+
+
+o $digest loop angular busca por todos os valores novos e atualizados e atualizam na visualização, assim fica em tempo
+real.
+
+Assim os dados ficam atualizados de acordo com o Firebase Database.
+
+______________________________________________________________________________________
+$loaded promisse
+
+Ele dispara quando o conjunto inicial de dados em tempo real vem do Firebase Database.
+
+Exemplo:
+
+this.users.$loaded().then(function(){
+
+	console.log(this.users.length);
+}.bind(this);
+
+POREM NAO É BOM ABRIR PROMISSES E ISSO É UMA VIOLAÇÃO, NÃO SE DEVE FAZER ISSO.
+
+PARA MELHORAR ISSO DEVE-SE USAR O ROTEADOR DO ANGULAR JS, O NG-ROUTE
+
+O roteador tem um objeto resolve, que permite injetar o valor resolvido de uma promise
+em um controlador. Isso apenas apos de ser carregado, que é o que queremos.
+
+resolve: {
+	users: function(firebaseRef, $fiebaseArray){
+		return $firebaseArray(firebaseRef.child('users')).$loaded();
+	}
+}
+
+AQUI NAO ESTAMOS ABRINDO UMA PROMISE E SIM RETORNANDO ELA, E ISSO PODE. ESTÁ CORRETO. O ANGULAR JS QUE ESTÁ ABRINDO PARA GENTE
+
+
+
