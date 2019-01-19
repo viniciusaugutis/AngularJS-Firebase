@@ -1,10 +1,10 @@
 # AngularJS Firebase
 
-## Descrição
+## Description
 
-Essa aplicação tem como objetivo a criação de um chat utilizando Angular JS e Firebase da Google
+This application aims to create a chat using Google's Angular JS and Firebase
 
-## Tecnologias
+## Technologies
 - Angular JS
 - Firebase
 - Angular Fire
